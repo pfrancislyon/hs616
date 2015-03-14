@@ -1,7 +1,7 @@
 ---
 title: "Multiple Choice Questions"
 author: "Tom De Natale"
-date: "March 12, 2015"
+date: "March 14, 2015"
 output: html_document
 ---
 
@@ -17,7 +17,7 @@ What are your impressions of day one for HS616 Statistical Computing for Biomedi
 
 ## Lecture 1b
 
-This is the correct way to set up a chunk of code to set N equal to 10000 if the #'s were removed to be able run the code in an RMarkdown file using RStudio?
+This is the correct way to set up a chunk of code to set N equal to 10000 please assuming the  "#"s are removed in a RMarkdown file. This code will run as a code chunk using for example "Knit HTML" in RStudio?
 ```
 #```r
 N<- 10000
@@ -31,15 +31,14 @@ N<- 10000
 
 If you had 2 decks of cards, using the choose function in R, what code will attain the probability of selecting the same specific card from each deck?
 
-* '1/(choose (52,1)* choose(52,1))'
-* '1/(choose (52,2))'
-* '1/(choose (52,1)* choose(51,2))'
-* '1/(choose (2,52))'
-
+* 1 / (choose (52,1) * choose(52,1))
+* 1 / (choose (52,2))
+* 1 / (choose (52,1) * choose(51,2))
+* 1 / (choose (2,52))
 
 ## Lecture 2b 
 
-Concepts that you need to master R in this class do NOT include:
+Concepts that you need to master or at least have some knowledge to use R in this class. These do NOT include:
 
 * Fourier Transforms
 *	All of these
@@ -57,10 +56,10 @@ diag(x) <- value
 ````
 
 * Answers x,w,y, are true
-* x) It can extract a diagonal given a matrix 
-* w) It can construct a diagonal matrix 
-* y) It can replace the diagonal of a matrix
-* z) It can diagnose cancer without assistance.
+* w: -- diag() can extract a diagonal given a matrix 
+* x: -- diag() can construct a diagonal matrix 
+* y: -- diag() can replace the diagonal of a matrix
+* z: -- diag() can diagnose cancer without assistance.
 
 ## Lecture 3b
 
@@ -69,8 +68,8 @@ Given a Markov Matrix, which is true
 * all entries of the matrix are nonnegative and the sum of each column vector
 is equal to 1
 * The sum of the rows is the square root of pi
-* Markov Matrices can be NXM in size
-* A Markov matrix is not a special classification of an Eigenvector 
+* Markov Matrices can be N X M in size, where N does not equal M
+* A Markov matrix is NOT a special classification of an Eigenvector 
 
 ## Lecture 4a
 
@@ -98,29 +97,35 @@ Choose the most appropriate answer for this R code calculating two ways the cost
 
 ## Lecture 4b
 
-Given the following runtime data, the goal is a 10 times improvement in run time. Which function(s) must improve in what order should be chosen to reach the goal with the most to gain first?
+Given the following runtime data, the goal is for a 10 times improvement in run time. Which function(s) must be improved and in what order should be chosen to reach the goal most quickly?
 ```
              self.time self.pct
 "function_A"    278.39    86.46
 "function_B"     39.32     9.10
 "function_C"      4.29     4.44
-"Total"         322.00   100.00
+-------------------------------
+Total           322.00   100.00
 ```
 
-* Must improve both function_A and function_B, and improve function_C only if close to target
-* Must improve  function_A and function_B, and  function_C 
+* Must improve both (function_A and function_B), and improve function_C only if close to target
+* Always must improve  (function_A and function_B, and function_C) 
 * Must improve function_C only
-* Must improve function_A only
+* Must improve (function_A and function_B) only
 
 ## Lecture 5a
+Explain what the first line of code does in making a table or dataframe named "less_toxic"
+```r
+less_toxic <- read.csv("toxic_text.csv", na.strings=c("UNK", "?"))
+knitr::kable(data.frame(
+  toxic = sapply(toxic, class),
+  less_toxic = sapply(less_toxic, class)
+)
+```
 
-paste my own regular expressions below matches this sentence exactly once?
-"The key, the whole key, and nothing but the key."
-
-* "\\.$"
-* "[Tt]he\\s"
-* "(and|not)"
-* "?key?"
+* reads a csv file named ("toxic_test.csv") and if values are missing puts "NA" for those entries that are unknown or missing 
+* reads a csv file and halts if a missing or unknown character string is encountered
+* reads a csv file and from the knitr library kables or knocksout table entries, hence the acronym kable in the knock out table
+* writes a csv file to toxic_test.csv and invokes an Excel workbook session after making the dataframe
 
 ## Lecture 5b
 
@@ -130,7 +135,7 @@ Which of the following could be used for webscraping?
 * Read HTML Table using library(knitr) site using a url
 * kable for easily putting scrapings into dataframes
 * Using library(rvest) to harvest data from the web by creating a wrapper utilizing html syntax to get data using url's
-* magrittr just piping along '%>%'
+* magrittr just piping along '%>%' or in other words using magritter to make your function more readable to humans
 
 ## Lecture 6a
 
@@ -144,12 +149,20 @@ sqldf::sqldf("SELECT * FROM A JOIN B ON a==b")
 
 ## Lecture 6b
 
-paste my ownnnection to an SQLite database?
+Given the following data_frame named patient. In the process of de-identifying data, one may choose to reference each patient's data indirectly. Which SQL query represents best what one might try to use in further processing? (Assume that id was made up in the process of making this table)?
+```
+> patient
+  id name sex
+1  1  Alt   F
+2  2  Box   M
+3  3  Cox   M
+4  4  Dew   F
+```
 
-* dsets <- dbConnect(RSQLite::SQLite(), "datasets.sqlite")
-* res <- dbSendQuery(dsets, "select * from iris limit 10")
-* sqliteCopyDatabase(dsets, "datasets.sqlite")
-* dbListTables(dsets)
+* sql <- "SELECT id FROM patient"
+* sql <- "SELECT * FROM patient"
+* sql <- "SELECT name FROM patient"
+* sql <- "SELECT sex FROM patient"
 
 ## Lecture 7a
 
@@ -164,7 +177,7 @@ Which is true of Tidy Data by Hadley Wickam?
 
 ## Lecture 7b
 
-What is TRUE of the following code and results? (Code was used in class as an example of how to build a model for our class project)?
+What is TRUE of the following code and results? (Note: Code was used in class as an example of how to build a model for our class project)
 ```
 > T_shirts <- data.frame(
 +   sex=sample(c("M","F"), 100, replace=T), 
