@@ -17,9 +17,11 @@ What are your impressions of day one for HS616 Statistical Computing for Biomedi
 
 ## Lecture 1b
 
-This is the correct way to set up a chunk of code to run in a RMarkdown file using RStudio?
-```r
+This is the correct way to set up a chunk of code to set N equal to 10000 if the #'s were removed to be able run the code in an RMarkdown file using RStudio?
+```
+#```r
 N<- 10000
+#```
 ```
 
 * True
@@ -46,7 +48,6 @@ Concepts that you need to master R in this class do NOT include:
 *	Poisson distribution (discrete)
 *	Binomial distribution (discrete)
 
-
 ## Lecture 3a
 
 The diag function has multiple uses:
@@ -70,7 +71,6 @@ is equal to 1
 * The sum of the rows is the square root of pi
 * Markov Matrices can be NXM in size
 * A Markov matrix is not a special classification of an Eigenvector 
-
 
 ## Lecture 4a
 
@@ -96,22 +96,21 @@ Choose the most appropriate answer for this R code calculating two ways the cost
 * A diagonal times a vector of that diagonal results in a squared value
 * R is fun only for statisticians
 
-
 ## Lecture 4b
 
-Pastemyownhe following profiling results:
+Given the following runtime data, the goal is a 10 times improvement in run time. Which function(s) must improve in what order should be chosen to reach the goal with the most to gain first?
 ```
              self.time self.pct
 "function_A"    278.39    86.46
-"function_B"     29.32     9.10
-"function_C"     14.29     4.44
+"function_B"     39.32     9.10
+"function_C"      4.29     4.44
+"Total"         322.00   100.00
 ```
-If you make `function_B` 100 times faster, how much faster would you expect the program be?
 
-* less than 10% faster
-* twice as fast
-* 100 times as fast
-* no faster
+* Must improve both function_A and function_B, and improve function_C only if close to target
+* Must improve  function_A and function_B, and  function_C 
+* Must improve function_C only
+* Must improve function_A only
 
 ## Lecture 5a
 
@@ -125,12 +124,13 @@ paste my own regular expressions below matches this sentence exactly once?
 
 ## Lecture 5b
 
-paste my ownse addresses cannot be read by the built-in `url()` function?
+Which of the following could be used for webscraping?
 
-* `https://connect.usfca.edu`
-* `http://rseek.org/`
-* `http://ftp.ics.uci.edu/pub/machine-learning-databases/`
-* `file:///usr/share/dict/words`
+* All of these
+* Read HTML Table using library(knitr) site using a url
+* kable for easily putting scrapings into dataframes
+* Using library(rvest) to harvest data from the web by creating a wrapper utilizing html syntax to get data using url's
+* magrittr just piping along '%>%'
 
 ## Lecture 6a
 
