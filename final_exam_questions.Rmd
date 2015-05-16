@@ -1,0 +1,189 @@
+---
+title: "Final Questions "
+author: "Tom De Natale"
+date: "May 16, 2015"
+output: html_document
+---
+
+## Lecture 8a
+
+One of the primary goals for using Principle Components Analysis is:
+
+* To find the dominate components of the data and effectively reduce features needed to be analyzed to create an effective model
+* The user should not normalize the data in order to see biased results
+* The principle component values or eigen vectors have 0 length
+* It is often useless as there often no components to analyze
+
+## Lecture 8b
+
+In the example code below in setting a parameter for a model, scientific notation is often used to set parameters. Why?
+```
+N<- 1e3
+```
+
+* It is often clearer and easier to read and modify if N is large such as ie9 or 10 to the ninth power versus 1000000000
+* This is false in the code about setting N equal to 1000 is ALWAYS clearer
+* This is false, counting 0’s is much easier
+* Programmers prefer encoding the powers of ten, rather than being clearer as it increases job security
+
+## Lecture 9a
+
+Choose the correct statement regarding the following:
+```
+plot(num1 ~ num2, data=df)
+lm(y ~ x)
+
+```
+
+* Changing "lm(y~x)" to "lm(y~x+Z)" makes the linear model function lm calculate results based on x and z
+* The first plot statement plots a variable df in a dataframe named num2
+* The use of tilde “~” is NOT valid in R
+* Changing "lm(y~x)" to "lm(y~x+Z)" does nothing
+
+## Lecture 9b 
+
+The following are examples of R code to generate a correlation diagram and a scatter plot. Select the best answer below:
+```
+{r corrgram}
+library(corrgram)
+corrgram(df3, order=TRUE, 
+    lower.panel=panel.shade, upper.panel=panel.pts, 
+    text.panel=panel.txt, main="Corrgram")
+```
+```
+{r ggplot_scattergram}
+library(ggplot2)
+g <- ggplot(data=flu, mapping=aes(x=date, y=rate)) + geom_point()
+g
+```
+
+* All of these
+* The corrgram package is used to show correlation between statistical data
+* ggplot is a very powerful and easy to use graphical package for R programmers
+* The code in the ggplot example is intended to make a scatter plot based on a data-frame named flu	
+
+## Lecture 10a
+
+Describe the brilliance of the Shiny app in R:
+
+* Is that it can create an interactive environment available on the web useful by both nonprogrammers and programmers
+* Is that anyone even non R users can learn how to GENERATE and use it easily
+* Is that it cannot be used creatively for presentations
+* Because it was created in a New York skyscraper, its was named (S)tay (h)igh (i)n (n)ew (y)ork or Shiny!
+
+## Lecture 10b
+
+The R package manipulate can be used to:
+
+* To manipulate a plot interactively by a user
+* To manipulate "big data" data-frames easily
+* The app is restricted to only 2 variables which are controlled by pickers
+* Works very quickly, regardless of underlying performance, such as size of data set or system speed 
+
+## Lecture 11a
+
+Executing the following code does what? 
+```
+N <- 20
+x <- 2 * runif(N) - 1
+y1 <- -1 * x + rnorm(N/2, sd=1/2)
+df2 <- data.frame(x, y=c(y1))
+distances <-dist(df2, method = "euclidean", diag = FALSE, upper = FALSE, p = 2) 
+```
+
+* The "dist" function using data from data-frame df2, creates a matrix called distance which represents the distances between the rows of df2
+* The optional parameters diag, upper and p must be defined or unintended errors will always occur
+* The runif or uniform distribution function creates data that is between 0 and 20
+* The data.frame statement will result in an error because the variable c is NOT defined
+
+
+## Lecture 11b
+
+The following code was used in class to demonstrate a caffeine model, Which of the following are not characteristics of “networkD3’? 
+```
+library("networkD3")
+caffeineData <- data.frame(Source=c("N1", "C2", "N3", "C3a", "N4", "C5", "N6", "C7", "C7a", "C7a", "C3a", "N1", "N4", "N6", "C5", "C7"),
+Target=c("C2", "N3", "C3a", "N4", "C5", "N6", "C7", "C7a", "N1", "C3a", "C7a", "CH3a", "CH3b", "CH3c", "O1", "O2"))
+simpleNetwork(caffeineData, height = 300, width = 700, fontSize=14)
+```
+
+* All of these answers are not characteristics of networkD3 
+* "networkD3" can only represent data in 2 dimensions
+* "networkD3"  is an old program that is going to be replaced by “hortonD4” an app that shows 4 dimensions
+* "networkD3" ” cannot be used interactively by the user
+
+## Lecture 12a
+
+Sample commands to implement Linear regression in R: 
+```
+lmfit = lm( change ~ setting + effort )
+summary(lmfit)
+```
+Which of the following statements are true?
+
+* All of these
+* Linear regression can be thought of as an optimization problem, where you are trying to find values for the coefficients m and b in y=mx+b that minimize the total squared error.
+* The function "lm"" is used to fit linear models. 
+* The results of the "summary" function include coefficients and estimated errors 
+
+## Lecture 12b
+
+Describe what the intent of the following R code inside a R markdown document?
+```
+shinyAppDir(
+  system.file("examples/06_tabsets", package="shiny"),
+  options=list(
+    width="100%", height=550 , echo = FALSE
+  )
+)
+```
+
+* This example embeds a Shiny application located in another directory
+* All of these
+* Makes a data-frame with 6 examples separated by commas
+* The height articulates how much of the horizontal screen the app can use 
+
+## Lecture 13a
+
+When would one use linear regression versus logistical regression ( lm vs glm )?
+
+* For example: if you wanted to see how body mass index predicts blood cholesterol (a continuous measure), you'd use linear regression. If you wanted to see how BMI predicts the odds of being a diabetic (a binary diagnosis), you'd use logistic regression. 
+* It doesn’t matter either will result in what you are looking for
+* It doesn’t matter either will not result in what you are looking for
+* None of these answers
+
+## Lecture 13b
+
+In the example below what is the intent of the -1 in the lm statement?
+```
+> fit3 <- lm(response ~ category + dose:category - 1, data=df)
+```
+
+* Adjust the resultant intercept by one. This technique often allows better visualization and use of the result.
+* There is always a minus 1 when using lm
+* Identifies that the first item in the data-frame df should be ignored
+* Is a keyword to invoke the Shiny app
+
+## Lecture 14a
+
+When using model fitting, in the following example: glm or generalized linear model fits dataset d1. How best is it to use the data that you have at hand?
+```
+d1 <- sim_cancer(N)
+fit1 <- glm(cancer ~ I(carcinogens - mean(carcinogens)) + I(age - mean(age)) + 1, 
+            data=d1, family="binomial")
+```
+
+* It is best to fit your data on one data set and evaluate the model on a second or test data set
+* Always use all of your data to fit the model
+* It is always OK to overfit your model
+* The model is usually more accurate if the number of data points is small
+
+## Lecture 14b
+Professor introduced heteroskedasticity, a technique to: 
+
+* Identify features through plotting residuals which may be a way to visualize nonlinearity better than plotting outcomes alone
+* Reflect a consistent standard error that would be expected from a linear relationship
+* Ability or method to identify unique bilinear features
+* Show all model errors are consistent
+
+
