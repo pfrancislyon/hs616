@@ -23,7 +23,7 @@ N<- 1e3
 
 * It is often clearer and easier to read and modify if N is large such as ie9 or 10 to the ninth power versus 1000000000
 * This is false in the code about setting N equal to 1000 is ALWAYS clearer
-* This is false, counting 0’s is much easier
+* This is false, counting 0's is much easier
 * Programmers prefer encoding the powers of ten, rather than being clearer as it increases job security
 
 ## Lecture 9a
@@ -37,7 +37,7 @@ lm(y ~ x)
 
 * Changing "lm(y~x)" to "lm(y~x+Z)" makes the linear model function lm calculate results based on x and z
 * The first plot statement plots a variable df in a dataframe named num2
-* The use of tilde “~” is NOT valid in R
+* The use of tilde "~" is NOT valid in R
 * Changing "lm(y~x)" to "lm(y~x+Z)" does nothing
 
 ## Lecture 9b 
@@ -99,7 +99,7 @@ distances <-dist(df2, method = "euclidean", diag = FALSE, upper = FALSE, p = 2)
 
 ## Lecture 11b
 
-The following code was used in class to demonstrate a caffeine model, Which of the following are not characteristics of “networkD3’? 
+The following code was used in class to demonstrate a caffeine model, Which of the following are not characteristics of "networkD3"?
 ```
 library("networkD3")
 caffeineData <- data.frame(Source=c("N1", "C2", "N3", "C3a", "N4", "C5", "N6", "C7", "C7a", "C7a", "C3a", "N1", "N4", "N6", "C5", "C7"),
@@ -109,8 +109,8 @@ simpleNetwork(caffeineData, height = 300, width = 700, fontSize=14)
 
 * All of these answers are not characteristics of networkD3 
 * "networkD3" can only represent data in 2 dimensions
-* "networkD3"  is an old program that is going to be replaced by “hortonD4” an app that shows 4 dimensions
-* "networkD3" ” cannot be used interactively by the user
+* "networkD3"  is an old program that is going to be replaced by "HortonD4" an app that shows 4 dimensions
+* "networkD3" cannot be used interactively by the user
 
 ## Lecture 12a
 
@@ -148,8 +148,8 @@ shinyAppDir(
 When would one use linear regression versus logistical regression ( lm vs glm )?
 
 * For example: if you wanted to see how body mass index predicts blood cholesterol (a continuous measure), you'd use linear regression. If you wanted to see how BMI predicts the odds of being a diabetic (a binary diagnosis), you'd use logistic regression. 
-* It doesn’t matter either will result in what you are looking for
-* It doesn’t matter either will not result in what you are looking for
+* It doesn't matter either will result in what you are looking for
+* It doesn't matter either will not result in what you are looking for
 * None of these answers
 
 ## Lecture 13b
