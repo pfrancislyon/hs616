@@ -32,7 +32,6 @@ Choose the correct statement regarding the following:
 ```
 plot(num1 ~ num2, data=df)
 lm(y ~ x)
-
 ```
 
 * Changing "lm(y~x)" to "lm(y~x+Z)" makes the linear model function lm calculate results based on x and z
