@@ -49,8 +49,6 @@ library(corrgram)
 corrgram(df3, order=TRUE, 
     lower.panel=panel.shade, upper.panel=panel.pts, 
     text.panel=panel.txt, main="Corrgram")
-```
-```
 {r ggplot_scattergram}
 library(ggplot2)
 g <- ggplot(data=flu, mapping=aes(x=date, y=rate)) + geom_point()
