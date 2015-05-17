@@ -28,16 +28,16 @@ N<- 1e3
 
 ## Lecture 9a
 
-Choose the correct statement regarding the following:
+Choose the correct statement regarding the following 2 independent statements:
 ```
 plot(num1 ~ num2, data=df)
 lm(y ~ x)
 ```
 
-* Changing "lm(y~x)" to "lm(y~x+Z)" makes the linear model function lm calculate results based on x and z
+* Changing `lm(y~x)` to `lm(y~x+z)` makes the linear model function lm calculate results based on x and z
 * The first plot statement plots a variable df in a dataframe named num2
 * The use of tilde "~" is NOT valid in R
-* Changing "lm(y~x)" to "lm(y~x+Z)" does nothing
+* Changing `lm(y~x)` to `lm(y~x+Z)` does nothing
 
 ## Lecture 9b 
 
