@@ -7,9 +7,9 @@ output: html_document
 
 ## Lecture 8a
 
-One of the primary goals for using Principle Components Analysis is:
+One of the primary goals for using Principle Component Analysis is:
 
-* To find the dominate components of the data and effectively reduce features needed to be analyzed to create an effective model
+* To find the dominant components of the data and effectively reduce features needed to be analyzed to create an effective model
 * The user should not normalize the data in order to see biased results
 * The principle component values or eigen vectors have 0 length
 * It is often useless as there often no components to analyze
@@ -43,12 +43,10 @@ lm(y ~ x)
 
 The following are examples of R code to generate a correlation diagram and a scatter plot. Select the best answer below:
 ```
-{r corrgram}
 library(corrgram)
 corrgram(df3, order=TRUE, 
     lower.panel=panel.shade, upper.panel=panel.pts, 
     text.panel=panel.txt, main="Corrgram")
-{r ggplot_scattergram}
 library(ggplot2)
 g <- ggplot(data=flu, mapping=aes(x=date, y=rate)) + geom_point()
 g
